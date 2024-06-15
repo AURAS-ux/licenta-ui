@@ -21,7 +21,7 @@ const LLMoptimizer = () => {
   const [isLoading, response, error] = useLLM(
     "/optimizer/llm",
     triggerLLM,
-    iters
+    Number(iters)
   );
 
   const handleTriggerLLM = () => {
@@ -52,16 +52,24 @@ const LLMoptimizer = () => {
           </Select>
 
           <Button colorScheme="teal" onClick={handleTriggerLLM} mt={30}>
-            Input values to LLM
+            Run LLM optimization
           </Button>
         </Box>
         <Box>
           {isLoading ? (
             <Spinner size="xl" thickness="8px" speed="0.7s" />
           ) : null}
-          <Code p={3} overflow="auto" whiteSpace="pre-wrap">
-            {response != "" ? JSON.stringify(response) : JSON.stringify(error)}
-          </Code>
+
+          {response != "" ? (
+            <Code p={3} overflow="auto" whiteSpace="pre-wrap">
+              {" "}
+              {JSON.stringify(response)}{" "}
+            </Code>
+          ) : error != "" ? (
+            <Code p={3} overflow="auto" whiteSpace="pre-wrap">
+              {JSON.stringify(error)}{" "}
+            </Code>
+          ) : null}
         </Box>
       </HStack>
     </>

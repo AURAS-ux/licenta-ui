@@ -118,7 +118,7 @@ const PSOoptimizer = () => {
       {isValid() ? (
         <Alert status="success" width={350}>
           <AlertIcon />
-          Data is valid {triggerPSO ? 1 : 0}
+          Data is valid
         </Alert>
       ) : (
         <Alert status="error" width={350}>
@@ -236,7 +236,7 @@ const PSOoptimizer = () => {
 
           {isValid() ? (
             <Button colorScheme="teal" onClick={handleTriggerPSO} mt={30}>
-              Input values to PSO
+              Optimize using PSO
             </Button>
           ) : null}
         </Box>
@@ -244,9 +244,16 @@ const PSOoptimizer = () => {
           {isLoading ? (
             <Spinner size="xl" thickness="8px" speed="0.7s" />
           ) : null}
-          <Code p={3} overflow="auto" whiteSpace="pre-wrap">
-            {response != "" ? JSON.stringify(response) : JSON.stringify(error)}
-          </Code>
+
+          {response != "" ? (
+            <Code p={3} overflow="auto" whiteSpace="pre-wrap">
+              {JSON.stringify(response)}
+            </Code>
+          ) : error != "" ? (
+            <Code p={3} overflow="auto" whiteSpace="pre-wrap">
+              {JSON.stringify(error)}
+            </Code>
+          ) : null}
         </Box>
       </HStack>
     </>

@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import DataManagement from "./components/DataManagement";
 import PSOoptimizer from "./components/PSOoptimizer";
 import LLMoptimizer from "./components/LLMoptimizer";
+import OptimizationStatistics from "./components/OptimizationStatistics";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <Route path="/manage-data" element={<DataManagement />} />
             <Route path="/pso" element={<PSOoptimizer />} />
             <Route path="/llm" element={<LLMoptimizer />} />
+            <Route path="/stats" element={<OptimizationStatistics />} />
             {/* <Route path="/view-batch" element={<BatchView />} /> */}
           </Routes>
         </GridItem>
