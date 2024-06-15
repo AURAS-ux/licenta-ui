@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <>
       <HStack display="flex" justifyContent="space-between" padding="20px">
-        <Link to="/">ver 0.0.2</Link>
+        <Link to="/">ver 0.0.3</Link>
         <ChackraLink
           href="http://localhost:5601/app/kibana_overview#/"
           isExternal
