@@ -41,7 +41,7 @@ const usePatients = (endpoint: string) => {
       });
 
     return () => controller.abort();
-  }, []);
+  }, [endpoint]);
 
   return { data, error, isLoading };
 };

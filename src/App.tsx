@@ -5,11 +5,16 @@ import NavBar from "./components/NavBar";
 import Header from "./components/Header";
 import BatchView from "./components/BatchView";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import DataManagement from "./components/DataManagement";
+import PSOoptimizer from "./components/PSOoptimizer";
+import LLMoptimizer from "./components/LLMoptimizer";
 
 function App() {
   return (
     <BrowserRouter>
       <Grid
+        rowGap={10}
+        columnGap={10}
         templateAreas={{
           base: `"nav" "main"`,
           lg: `"nav nav" "aside main"`, //>1024px
@@ -28,7 +33,10 @@ function App() {
         <GridItem area="main">
           <Routes>
             <Route path="/view-data" element={<DataGrid />} />
-            <Route path="/view-batch" element={<BatchView />} />
+            <Route path="/manage-data" element={<DataManagement />} />
+            <Route path="/pso" element={<PSOoptimizer />} />
+            <Route path="/llm" element={<LLMoptimizer />} />
+            {/* <Route path="/view-batch" element={<BatchView />} /> */}
           </Routes>
         </GridItem>
       </Grid>
