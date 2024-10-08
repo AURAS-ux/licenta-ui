@@ -9,6 +9,7 @@ import DataManagement from "./components/DataManagement";
 import PSOoptimizer from "./components/PSOoptimizer";
 import LLMoptimizer from "./components/LLMoptimizer";
 import OptimizationStatistics from "./components/OptimizationStatistics";
+import ClassificationView from "./components/ClassificationView";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <Route path="/view-data" element={<DataGrid />} />
             <Route path="/manage-data" element={<DataManagement />} />
             <Route path="/pso" element={<PSOoptimizer />} />
+            <Route path="/classify" element={<ClassificationView />} />
             <Route path="/llm" element={<LLMoptimizer />} />
             <Route path="/stats" element={<OptimizationStatistics />} />
             {/* <Route path="/view-batch" element={<BatchView />} /> */}

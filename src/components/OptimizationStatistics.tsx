@@ -76,9 +76,15 @@ const OptimizationStatistics = () => {
         data={runTimeData}
         margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
       >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis domain={[-50]} />
+        <CartesianGrid strokeDasharray="3 3" stroke="white" />
+        <XAxis
+          color="#fff"
+          dataKey="name"
+          label={{ value: "Index", position: "insideBottomRight", offset: -10 }}
+        />
+        <YAxis
+          label={{ value: "Time(s)", angle: -90, position: "insideLeft" }}
+        />
         <Tooltip />
         <Legend />
         <Line
@@ -104,9 +110,15 @@ const OptimizationStatistics = () => {
         data={timeData}
         margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
       >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis domain={[0]} />
+        <CartesianGrid strokeDasharray="3 3" stroke="white" />
+        <XAxis
+          dataKey="name"
+          label={{ value: "Index", position: "insideBottomRight", offset: -10 }}
+        />
+        <YAxis
+          domain={[0]}
+          label={{ value: "Time(s)", angle: -90, position: "insideLeft" }}
+        />
         <Tooltip />
         <Legend />
         <Line
@@ -132,9 +144,15 @@ const OptimizationStatistics = () => {
         data={accData}
         margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
       >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis domain={[0, ]} />
+        <CartesianGrid strokeDasharray="3 3" stroke="white" />
+        <XAxis
+          dataKey="name"
+          label={{ value: "Index", position: "insideBottomRight", offset: -10 }}
+        />
+        <YAxis
+          domain={[0]}
+          label={{ value: "Accuracy(%)", angle: -90, position: "insideLeft" }}
+        />
         <Tooltip />
         <Legend />
         <Line

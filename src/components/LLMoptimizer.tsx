@@ -45,7 +45,7 @@ const LLMoptimizer = () => {
             value={iters}
           />
 
-          <Text mt={30}>LLM(TBD)</Text>
+          <Text mt={30}>LLM</Text>
           <Select width={350}>
             <option>GPT</option>
             <option>GeminiAI</option>
